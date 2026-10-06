@@ -20,3 +20,13 @@ user_age = (
 ) % 105
 
 print(f"Your age is {user_age}; that's a good time to start programming!")
+
+
+print("Now I will prove to you that I can count to any number you want.")
+
+count_limit = int(input())
+
+for current_number in range(count_limit + 1):
+    print(f"{current_number} !")
+
+print("Completed, have a nice day!")
