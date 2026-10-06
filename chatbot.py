@@ -30,3 +30,24 @@ for current_number in range(count_limit + 1):
     print(f"{current_number} !")
 
 print("Completed, have a nice day!")
+
+print("Let's test your programming knowledge.")
+
+correct_answer = 2
+
+while True:
+    print("Why do we use methods?")
+    print("1. To repeat a statement multiple times.")
+    print("2. To decompose a program into several small subroutines.")
+    print("3. To determine the execution time of a program.")
+    print("4. To interrupt the execution of a program.")
+
+    user_answer = int(input())
+
+    if user_answer == correct_answer:
+        break
+
+    print("Please, try again.")
+
+print("Congratulations, have a nice day!")
+
