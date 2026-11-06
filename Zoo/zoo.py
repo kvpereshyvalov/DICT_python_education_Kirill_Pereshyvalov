@@ -116,11 +116,26 @@ It looks fine!"""
 
 animals = [camel, lion, deer, goose, bat, rabbit]
 
-habitat_number = int(
-    input("Please enter the number of the habitat you would like to view: ")
-)
+while True:
+    habitat_input = input(
+        "Please enter the number of the habitat you would like to view: "
+    ).strip()
 
-print(animals[habitat_number])
-print("You've reached the end of the program.")
+    if habitat_input.lower() == "exit":
+        break
+
+    try:
+        habitat_number = int(habitat_input)
+    except ValueError:
+        print("Please enter a number from 0 to 5, or 'exit'.")
+        continue
+
+    if habitat_number < 0 or habitat_number >= len(animals):
+        print("Please enter a number from 0 to 5, or 'exit'.")
+        continue
+
+    print(animals[habitat_number])
+
+print("See you later!")
 
 
