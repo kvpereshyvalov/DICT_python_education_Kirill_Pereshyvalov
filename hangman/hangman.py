@@ -6,7 +6,7 @@ WORDS = ["python", "java", "javascript", "php"]
 MAX_LIVES = 8
 
 
-def display_word(secret_word, guessed_letters):
+def display_word(secret_word: str, guessed_letters: set[str]) -> str:
     """Displays guessed letters and hides the remaining ones."""
     return "".join(
         letter if letter in guessed_letters else "-"
@@ -14,17 +14,14 @@ def display_word(secret_word, guessed_letters):
     )
 
 
-def play_game():
+def play_game() -> None:
     """Starts one round of Hangman."""
     secret_word = random.choice(WORDS)
     guessed_letters = set()
     remaining_lives = MAX_LIVES
 
-    print("HANGMAN")
     print()
-
-    displayed_word = display_word(secret_word, guessed_letters)
-    print(displayed_word)
+    print("-" * len(secret_word))
 
     while remaining_lives > 0:
         player_letter = input("Input a letter: > ")
@@ -60,5 +57,21 @@ def play_game():
             return
 
 
+def main() -> None:
+    """Displays the main menu and controls the game."""
+    print("HANGMAN")
+
+    while True:
+        menu_choice = input(
+            'Type "play" to play the game, "exit" to quit: > '
+        ).strip()
+
+        if menu_choice == "play":
+            play_game()
+
+        elif menu_choice == "exit":
+            break
+
+
 if __name__ == "__main__":
-    play_game()
+    main()
