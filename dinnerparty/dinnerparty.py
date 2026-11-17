@@ -1,4 +1,6 @@
 
+import random
+
 number_of_friends = int(input("Enter the number of friends joining (including you):\n"))
 
 if number_of_friends <= 0:
@@ -19,4 +21,10 @@ else:
     for friend_name in friends:
         friends[friend_name] = amount_per_person
 
-    print(friends)
+    lucky_feature = input('Do you want to use the "Who is lucky?" feature? Write Yes/No:\n')
+
+    if lucky_feature == "Yes":
+        lucky_friend = random.choice(list(friends.keys()))
+        print(f"{lucky_friend} is the lucky one!")
+    else:
+        print("No one is going to be lucky")
