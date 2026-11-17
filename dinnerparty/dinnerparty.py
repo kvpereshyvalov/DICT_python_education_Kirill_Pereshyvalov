@@ -12,4 +12,11 @@ else:
         friend_name = input()
         friends[friend_name] = 0
 
+    total_amount = float(input("Enter the total amount:\n"))
+
+    amount_per_person = round(total_amount / number_of_friends, 2)
+
+    for friend_name in friends:
+        friends[friend_name] = amount_per_person
+
     print(friends)
