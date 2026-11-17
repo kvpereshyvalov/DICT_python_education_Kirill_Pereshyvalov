@@ -26,5 +26,14 @@ else:
     if lucky_feature == "Yes":
         lucky_friend = random.choice(list(friends.keys()))
         print(f"{lucky_friend} is the lucky one!")
+
+        amount_per_person = round(total_amount / (number_of_friends - 1), 2)
+
+        for friend_name in friends:
+            friends[friend_name] = amount_per_person
+
+        friends[lucky_friend] = 0
     else:
         print("No one is going to be lucky")
+
+    print(friends)
